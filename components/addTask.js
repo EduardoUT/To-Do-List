@@ -15,6 +15,11 @@ export const addTask = (evento) => {
     const value = input.value;
     const date = calendar.value;
     const dateFormat = moment(date).format("DD/MM/YYYY");
+
+    if (value == "" || date == "") {
+        //Al índicar return, el código que sigue no se ejecutará.
+        return;
+    }
     
     input.value = "";
     calendar.value = "";
