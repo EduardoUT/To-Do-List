@@ -6,7 +6,7 @@ import deleteIcon from "./deleteIcon.js";
  * Spread Operator:
  * Hacer una copia de seguridad.
  */
-const addTask = (evento) => {
+export const addTask = (evento) => {
     evento.preventDefault();
     const list = document.querySelector("[data-list]");
     const input = document.querySelector("[data-form-input]");
@@ -42,7 +42,7 @@ const addTask = (evento) => {
           list.appendChild(task);
 }
 
-const createTask = ({ value, dateFormat }) => {
+export const createTask = ({ value, dateFormat }) => {
     /**
      * En el navegador para mantener los console.log antes de
      * evitar que se recargue la página seleccionamos en el
@@ -71,5 +71,3 @@ const createTask = ({ value, dateFormat }) => {
           task.appendChild(deleteIcon());
     return task;
 }
-
-export default addTask;
