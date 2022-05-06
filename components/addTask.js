@@ -1,6 +1,7 @@
 /**Importando módulos */
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
+import { displayTasks } from "./displayTasks.js";
 
 /**
  * Spread Operator:
@@ -27,6 +28,7 @@ export const addTask = (evento) => {
         value,
         dateFormat
     }
+    list.innerHTML = "";
     /**
      * Uso de pipe ( || ) o evaluación de corto cirtcuito (short circuit evaluation).
      * Con eso, le decimos a la aplicación que en caso de que localStorage 
@@ -43,8 +45,9 @@ export const addTask = (evento) => {
           taskList.push(taskObj);
     //Ahora los valores a almacenar el localStorage son los que posea el array.
     localStorage.setItem("tasks", JSON.stringify(taskList));
-    const task = createTask(taskObj);
-          list.appendChild(task);
+    displayTasks();
+    /* const task = createTask(taskObj);
+          list.appendChild(task); */
 }
 
 export const createTask = ({ value, dateFormat }) => {
