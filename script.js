@@ -16,10 +16,10 @@
  * permanecerán al alcance del usuario.
 */
 import { addTask } from "./components/addTask.js";
-import { readTasks } from "./components/readTasks.js";
+import { displayTasks } from "./components/displayTasks.js";
 
 const btn = document.querySelector("[data-form-btn]");
 
 /**Esta es una Arrow Function o Función anónima */
 btn.addEventListener("click", addTask);
-readTasks();
+displayTasks();
